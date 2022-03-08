@@ -10,9 +10,9 @@ public class DataWorker {
 	String[] palabras = new String [30];
 	
 	/**
-	 * Crea una array list con un csv
-	 * @param ruta
-	 * @return
+	 * Método que crea una array list a partir de un csv
+	 * @param String path del archivo csv
+	 * @return ArrayList del csv.
 	 */
 	public ArrayList<String> regresaArrayList(String ruta){
 		ArrayList <String> list = new ArrayList <String>();
@@ -33,9 +33,9 @@ public class DataWorker {
 	}
 	
 	/**
-	 * Metodo que elimina numeros, caracteres especiales y palabras que contengan Mo//mo
-	 * @param list2
-	 * @return
+	 * Método que elimina numeros, caracteres especiales y palabras que contengan Mo//mo
+	 * @param Array List previamente convertido
+	 * @return Array List corregido.
 	 */
 	public ArrayList<String> eliminarCaracteres(ArrayList<String> list2) {
 		int i=0, j=0;
