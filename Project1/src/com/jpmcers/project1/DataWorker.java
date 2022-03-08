@@ -22,12 +22,10 @@ public class DataWorker {
 			Scanner csvData = new Scanner(new File(ruta));
 			while(csvData.hasNext()) {
 				list.add(csvData.nextLine());
-				System.out.println(list.get((list.size())-1));
 			}}catch(FileNotFoundException ex){
 				System.out.println(ex.toString());
 			}
 			
-		System.out.println(list.size());
 		return list;
 		
 	}
@@ -47,7 +45,7 @@ public class DataWorker {
 			
 			tempArray[i]=tempArray[i].replaceAll("F1", " ").replaceAll("\\d", " ").replaceAll("\\W", " ").replaceAll("AbuDhabiGP[\\w]*", " ").replaceAll("https[\\w]*", " ");
 			list.add(tempArray[i]);
-			
+			System.out.println(list.get(i));
 
 		}
 		return list;
