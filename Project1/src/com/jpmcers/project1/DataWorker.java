@@ -46,7 +46,6 @@ public class DataWorker {
 			tempArray[i]=tempArray[i].replaceAll("F1", " ").replaceAll("\\d", " ").replaceAll("\\W", " ").replaceAll("AbuDhabiGP[\\w]*", " ").replaceAll("https[\\w]*", " ");
 			list.add(tempArray[i]);
 			System.out.println(list.get(i));
-
 		}
 		return list;
 	}
