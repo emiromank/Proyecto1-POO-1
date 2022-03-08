@@ -6,8 +6,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class DataWorker {
-	ArrayList<String> listPalabras = new ArrayList<String>();
-	String[] palabras = new String [30];
+	private ArrayList<String> listPalabras = new ArrayList<String>();
+	private String[] palabras = new String [30];
+	private int[] tweets = new int[30];
 	
 	/**
 	 * Método que crea una array list a partir de un csv
@@ -49,6 +50,70 @@ public class DataWorker {
 		}
 		return list;
 	}
+	
+	/**
+	 * Método que cuenta las palabras de un arreglo específico indicado por el usuario (Primeramente esta hardcodeado pero posteriormente se le pedirán al usuario las palabras)
+	 * @param palabras
+	 * @param tweets
+	 * @return int Array con los numeros de las palabras.
+	 */
+	public int[] contarPalabras(String[] palabras, ArrayList <String> tweets) {
+		String[] list = tweets.toArray(new String[0]);
+		int contPalabras[] = new int[30];
+		
+		for(int i = 0; i < tweets.size();i++) {
+			for(int j = 0; j < palabras.length;j++) {
+				if(list[i].contains(palabras[j]) == true) {
+					contPalabras[j]++;
+				}
+			}
+		}
+		return contPalabras;
+	}
+	
+	/**
+	 * Método que imprime el arreglo junto con las palabras que se indicaron previamente
+	 * @param numPalabras
+	 * @param palabras
+	 */
+	public void imprimirPalabras(int[] numPalabras, String[] palabras) {
+		
+		System.out.println("\n");
+		for(int i = 0; i < palabras.length;i++) {
+			System.out.println("El numero de veces que se encontro la palabra:'"+palabras[i]+"' Fueron: "+numPalabras[i]);
+		}
+		return;
+	}
+	
+	/**
+	 * Métodos Set y Get.
+	 * @return
+	 */
+	public ArrayList<String> getListPalabras() {
+		return listPalabras;
+	}
+
+	public void setListPalabras(ArrayList<String> listPalabras) {
+		this.listPalabras = listPalabras;
+	}
+
+	public String[] getPalabras() {
+		return palabras;
+	}
+
+	public void setPalabras(String[] palabras) {
+		this.palabras = palabras;
+	}
+
+	public int[] getTweets() {
+		return tweets;
+	}
+
+	public void setTweets(int[] tweets) {
+		this.tweets = tweets;
+	}
+
+	
 	
 }
 
